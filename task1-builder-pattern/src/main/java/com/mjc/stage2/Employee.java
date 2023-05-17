@@ -14,7 +14,6 @@ public class Employee {
     private String carNumber;
 
     public Employee() {
-        throw new UnsupportedOperationException();
     }
 
     public String getName() {
