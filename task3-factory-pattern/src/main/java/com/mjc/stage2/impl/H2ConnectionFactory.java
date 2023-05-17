@@ -14,17 +14,18 @@ public class H2ConnectionFactory implements ConnectionFactory {
     @Override
     public Connection createConnection() {
         Connection connection;
-        String fileName = "D:\\mj school\\stage_2\\stage2-module4-task1\\task3-factory-pattern\\src\\main\\resources\\h2database.properties";
+        //String fileName = "D:\\mj school\\stage_2\\stage2-module4-task1\\task3-factory-pattern\\src\\main\\resources\\h2database.properties";
+
         Properties properties;
-        FileInputStream fileInputStream;
+        //FileInputStream fileInputStream;
         String url;
         String user;
         String password;
 
         try{
-            fileInputStream = new FileInputStream(fileName);
+            //fileInputStream = new FileInputStream(fileName);
             properties = new Properties();
-            properties.load(fileInputStream);
+            properties.load(Connection.class.getClassLoader().getResourceAsStream("h2database.properties"));
 
             url = properties.getProperty("db_url");
             user = properties.getProperty("user");
